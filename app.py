@@ -65,12 +65,15 @@ if submitted:
             3. **Relevant Hashtags**
             """
 
+
             with st.spinner("Generating your content..."):
                 response = client.chat.completions.create(
-                    model="openai/gpt-oss-120b",
+                    model="llama-3.3-70b-versatile",
                     messages=[{"role": "user", "content": prompt}],
                     temperature=0.7,
-                )           generated_text = response.choices[0].message.content
+                )
+                
+                generated_text = response.choices[0].message.content
 
             st.success("Generated Successfully!")
             st.markdown("---")
