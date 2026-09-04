@@ -59,18 +59,18 @@ if submitted:
             
             Format the response clearly into these sections:
             1. **Main Post Content**
-            2. **Caption / Call to Action (CTA)**
+            2. **Caption / Ca
+                
+     ll to Action (CTA)**
             3. **Relevant Hashtags**
             """
 
             with st.spinner("Generating your content..."):
                 response = client.chat.completions.create(
-                    model="llama-3.3-70b-versatile",
+                    model="openai/gpt-oss-120b",
                     messages=[{"role": "user", "content": prompt}],
                     temperature=0.7,
-                )
-                
-                generated_text = response.choices[0].message.content
+                )           generated_text = response.choices[0].message.content
 
             st.success("Generated Successfully!")
             st.markdown("---")
